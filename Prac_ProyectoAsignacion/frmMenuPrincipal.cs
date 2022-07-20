@@ -41,7 +41,7 @@ namespace Prac_ProyectoAsignacion
         private void btnLab_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var fLab = new frmAulas();
+            var fLab = new frmLaboratorios();
             fLab.FormClosed += (s, args) => this.Close();
             fLab.Show();
         }

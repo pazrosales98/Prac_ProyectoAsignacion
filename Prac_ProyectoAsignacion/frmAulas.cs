@@ -17,7 +17,7 @@ namespace Prac_ProyectoAsignacion
         public frmAulas()
         {
             InitializeComponent();
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ASUS\source\repos\Prac_ProyectoAsignacion\Prac_ProyectoAsignacion\AulasBD.accdb";
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\andyr\Source\Repos\Prac_ProyectoAsignacion\Prac_ProyectoAsignacion\AulasBD.accdb";
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -50,8 +50,18 @@ namespace Prac_ProyectoAsignacion
                 conn.Open(); 
                 OleDbCommand comm = new OleDbCommand();
                 comm.Connection = conn;
-                comm.CommandText = "insert into ClasesAsignaciones (CodAula,)";
-                comm.ExecuteNonQuery();
+                string GuardarDias = "";
+                foreach(Object dias in cLBDias.SelectedItems){
+                    GuardarDias += dias.ToString();
+                   
+                }
+                MessageBox.Show(GuardarDias);
+                //comm.CommandText = "insert into ClasesAsignaciones (CodAula,CodigoClase,CodMaestro,HoraInicio,HoraFin,Dia) " +
+                // "values('" + cboCodigoAula.SelectedValue + "' ,'" + cboNombreClase.SelectedValue + "','" 
+                // + cboNombreMaestro.SelectedValue + "','" + txtInicio.Text + "', '" + txtFin.Text + "', '"+ cLBDias.SelectedIndices+ "')";
+
+                // comm.ExecuteNonQuery();
+                MessageBox.Show("Clase asignada exitosamente");
             }
             catch(Exception ex)
             {

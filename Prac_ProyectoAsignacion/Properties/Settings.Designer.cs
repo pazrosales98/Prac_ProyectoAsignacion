@@ -32,5 +32,15 @@ namespace Prac_ProyectoAsignacion.Properties {
                 return ((string)(this["AulasBDConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\AulasBD.mdb")]
+        public string AulasBDConnectionString1 {
+            get {
+                return ((string)(this["AulasBDConnectionString1"]));
+            }
+        }
     }
 }
