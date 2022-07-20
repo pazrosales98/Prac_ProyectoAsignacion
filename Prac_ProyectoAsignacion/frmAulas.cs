@@ -17,7 +17,7 @@ namespace Prac_ProyectoAsignacion
         public frmAulas()
         {
             InitializeComponent();
-            conn.ConnectionString = @"Provider=Microsoft.ACE."
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ASUS\source\repos\Prac_ProyectoAsignacion\Prac_ProyectoAsignacion\AulasBD.accdb";
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -47,8 +47,15 @@ namespace Prac_ProyectoAsignacion
         {
             try
             {
-                Connection.Open();
-                OleDbCommand
+                conn.Open(); 
+                OleDbCommand comm = new OleDbCommand();
+                comm.Connection = conn;
+                comm.CommandText = "insert into ClasesAsignaciones (CodAula,)";
+                comm.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
             }
         }
     }
